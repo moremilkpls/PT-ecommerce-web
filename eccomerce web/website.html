@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop Men's</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset and Basics */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: #111;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* Container */
+    .container {
+      display: flex;
+      padding: 30px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    /* Sidebar - Filters */
+    aside.filters {
+      width: 250px;
+    }
+
+    aside h3 {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .filter-section {
+      margin-bottom: 30px;
+    }
+
+    .filter-section label {
+      display: block;
+      margin: 10px 0;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .colors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .color-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: grey;
+      border: 2px solid #ddd;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .color-circle:hover {
+      transform: scale(1.2);
+      border-color: black;
+    }
+
+    /* Products */
+    section.products {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .sort-select {
+      padding: 5px;
+      font-size: 14px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .product-image {
+      background: #ccc;
+      height: 180px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .product-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .product-price {
+      color: #26a69a;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .product-size {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Load More Button */
+    .load-more {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .load-more button {
+      padding: 10px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #111;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .load-more button:hover {
+      background-color: #333;
+    }
+    
+   
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      aside.filters {
+        width: 100%;
+      }
+
+      section.products {
+        width: 100%;
+      }
+
+      .products-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+
+    
+
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ShopMens</div>
+  <nav>
+    <form>
+        <input type="text" placeholder="Search...">
+      </form>
+      
+    <a href="#">Search</a>
+    <a href="#">Stories</a>
+    <a href="about.html">About</a>
+    <a href="#">Shop</a>
+    <a href="#">Login</a>
+  </nav>
+</header>
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="filters">
+    <h3>Filters</h3>
+
+    <div class="filter-section">
+      <strong>Categories</strong>
+      <label><input type="checkbox"> Jackets</label>
+      <label><input type="checkbox"> Pants</label>
+      <label><input type="checkbox"> Sweatshirts & Hoodies</label>
+      <label><input type="checkbox"> Sweaters</label>
+      <label><input type="checkbox"> Shirts</label>
+      <label><input type="checkbox"> T-Shirts</label>
+      <label><input type="checkbox"> Polos</label>
+    </div>
+
+    <div class="filter-section">
+      <strong>Color</strong>
+      <div class="colors">
+        <div class="color-circle" style="background: red;"></div>
+        <div class="color-circle" style="background: blue;"></div>
+        <div class="color-circle" style="background: green;"></div>
+        <div class="color-circle" style="background: yellow;"></div>
+        <div class="color-circle" style="background: purple;"></div>
+        <div class="color-circle" style="background: orange;"></div>
+        <div class="color-circle" style="background: black;"></div>
+        <div class="color-circle" style="background: grey;"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Products -->
+  <section class="products">
+    <div class="products-header">
+      <div>Showing 1-6 Products</div>
+      <select class="sort-select">
+        <option>Sort by Popular</option>
+        <option>Price Low to High</option>
+        <option>Price High to Low</option>
+        <option>Newest First</option>
+      </select>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image"></div>
+        <div class="product-title">BapeShark Hoodie</div>
+        <div class="product-price">$99</div>
+        <div class="product-size">M</div>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image"></div>
+          <div class="product-title">Gnarly Tracksuit</div>
+          <div class="product-price">$81</div>
+          <div class="product-size">L</div>
+        </div>
+
+      <div class="product-card">
+        <div class="product-image"></div>
+        <div class="product-title">Chromehearts Longsleeve</div>
+        <div class="product-price">$99</div>
+        <div class="product-size">M</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image"></div>
+        <div class="product-title">Carhartt Overall</div>
+        <div class="product-price">$99</div>
+        <div class="product-size">M</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image"></div>
+        <div class="product-title">MN+LA Hoodie</div>
+        <div class="product-price">$99</div>
+        <div class="product-size">M</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image"></div>
+        <div class="product-title">Dont Blame The Kids Sweatpants</div>
+        <div class="product-price">$99</div>
+        <div class="product-size">M</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image"></div>
+        <div class="product-title">Men's Winter Jacket</div>
+        <div class="product-price">$19</div>
+        <div class="product-size">M</div>
+      </div>
+    </div>
+
+    <div class="load-more">
+      <button>Load more products</button>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>
